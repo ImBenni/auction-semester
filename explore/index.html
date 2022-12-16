@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore all auction listings from sellers on Knight" />
+    <title>Explore | Knight</title>
+    <link rel="stylesheet" href="/dist/css/style.css">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/aceh">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script defer type="module" src="/src/js/index.mjs"></script>
+    <script src="https://kit.fontawesome.com/7894e946c2.js" crossorigin="anonymous"></script>
+</head>
+<body class="min-vh-100 d-flex flex-column bg-mainback">
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+      <a href="./../" class="d-flex align-items-center justify-content-center justify-content-md-start col-12 col-md-3 mb-2 mb-md-0 text-decoration-none">
+        <img src="./../assets/img/Branding/LogoTrans2.svg" alt="mdo" class="bi me-2" width="40" height="40">
+        <span class="fs-4 text-white">Knight</span>
+      </a>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="./../" class="nav-link px-2 fw-bold link-textsecondary">HOME</a></li>
+        <li><a href="./../explore/" class="nav-link px-2 fw-bold link-light">EXPLORE</a></li>
+        <li><a href="./../product/create/" class="nav-link px-2 fw-bold link-textsecondary">CREATE</a></li>
+      </ul>
+      <div class="col-md-3 text-end d-flex justify-content-end">
+        <a id="" class="d-flex flex-row-reverse gap-3 text-decoration-none mx-2 bg-primary rounded-2 px-1">
+          <div class="d-flex align-items-center gap-1">
+            <p id="wallet" class="mb-0 mx-1">0.00</p>
+            <i class="fa-solid fa-dollar-sign text-white"></i>
+          </div>
+        </a>
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img id="avatar" src="./../assets/img/profile.png" alt="mdo" width="32" height="32" class="rounded">
+          </a>
+          <ul id="loginout" class="dropdown-menu text-small" style="">
+            <li id="profile" class="d-none"><a id="profilelink" class="dropdown-item"  href="./../profile/">Profile</a></li>
+            <li id="loginbtn" class="d-block"><a class="dropdown-item" href="./../login/">Log in</a></li> 
+            <li><hr class="dropdown-divider"></li>
+            <li id="register" class="d-block"><a class="dropdown-item"  href="./../register/">Register</a></li> 
+            <li id="logout" class="d-none"><a class="dropdown-item"  href="./">Log out</a></li>            
+          </ul>
+        </div>
+      </div>
+    </header>
+  </div>
+    <main class="">
+      <section class="container">
+        <div class="d-flex flex-row pb-4">
+          <form id="searchForm" class="col-12 col-md-12 d-flex" role="search">
+            <input id="searchInput" type="search" class="form-control" placeholder="Search for a post or a tag!" aria-label="Search">
+              <!-- <button id="searchBtn" type="button" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </button> -->
+          </form>
+         
+          <!-- <div class="dropdown col-1 mx-4">
+            <button type="button" id="SortDrop" class="btn btn-black dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-sort-amount-down" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu bg-dark" aria-labelledby="SortDrop">
+              <li><a class="dropdown-item text-white" href="#">Option 1</a></li>
+              <li><a class="dropdown-item text-white" href="#">Option 2</a></li>
+              <li><a class="dropdown-item text-white" href="#">Option 3</a></li>
+            </ul>
+          </div> -->
+         
+        </div>
+        
+      </section>
+      
+      <div id="searchListings" class="container mb-5 d-none">
+        
+      </div>
+
+      <div id="listings" class="container mb-5">
+
+        <!-- <div class="row row-cols-1 row-cols-md-4 g-4" >
+          <div class="col">
+            <a href="#" class="card h-100 w-100 bg-opacity-25 bg-black text-decoration-none">
+              <img src="/assets/img/nike1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-white text-opacity-50 fs-6">John Doe</h5>
+                <p class="card-text fw-bold">Nike Air Force 1</p>
+                <div class="card-body bg-white bg-opacity-10 col-auto rounded-2">
+                  <div class="d-flex justify-content-between">
+                    <div class="col-6 ">
+                      <p class="card-text">
+                        <small class="fw-bold text-white text-opacity-25">Top Bid</small> <br>
+                        <small class="fw-bold text-white text-opacity-25">Ends in</small>
+                      </p>
+                    </div>
+                    <div class="">
+                      <p class="card-text text-end">
+                        <small class="fw-bold text-white text-opacity-50">$129</small> <br>
+                        <small class="fw-bold text-white text-opacity-50">2 days</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div> 
+        </div>-->
+      </div>
+      
+    </main>
+    <div class="container-fluid bg-secondback mt-auto">
+        <footer class="py-3 my-5">
+        <div class="border-bottom pb-3 mb-3"></div>
+          <p class="mt-5 text-center">© 2023 Knight</p>
+        </footer>
+      </div>
+</body>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/aceh');
+</style>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore all auction listings from sellers on Knight" />
+    <title>Profile | Knight</title>
+    <link rel="stylesheet" href="/dist/css/style.css">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/aceh">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script defer type="module" src="/src/js/index.mjs"></script>
+    <script src="https://kit.fontawesome.com/7894e946c2.js" crossorigin="anonymous"></script>
+</head>
+<body class="min-vh-100 d-flex flex-column bg-mainback">
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+      <a href="./../" class="d-flex align-items-center justify-content-center justify-content-md-start col-12 col-md-3 mb-2 mb-md-0 text-decoration-none">
+        <img src="./../assets/img/Branding/LogoTrans2.svg" alt="mdo" class="bi me-2" width="40" height="40">
+        <span class="fs-4 text-white">Knight</span>
+      </a>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="./../" class="nav-link px-2 fw-bold link-textsecondary">HOME</a></li>
+        <li><a href="./../explore/" class="nav-link px-2 fw-bold link-textsecondary">EXPLORE</a></li>
+        <li><a href="./../product/create/" class="nav-link px-2 fw-bold link-textsecondary">CREATE</a></li>
+      </ul>
+      <div class="col-md-3 text-end d-flex justify-content-end">
+        <a id="" class="d-flex flex-row-reverse gap-3 text-decoration-none mx-2 bg-primary rounded-2 px-1">
+          <div class="d-flex align-items-center gap-1">
+            <p id="wallet" class="mb-0 mx-1">0.00</p>
+            <i class="fa-solid fa-dollar-sign text-white"></i>
+          </div>
+        </a>
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img id="avatar" src="./../assets/img/profile.png" alt="mdo" width="32" height="32" class="rounded">
+          </a>
+          <ul id="loginout" class="dropdown-menu text-small" style="">
+            <li id="profile" class="d-none"><a id="profilelink" class="dropdown-item"  href="./../profile/">Profile</a></li>
+            <li id="loginbtn" class="d-block"><a class="dropdown-item" href="./../login/">Log in</a></li> 
+            <li><hr class="dropdown-divider"></li>
+            <li id="register" class="d-block"><a class="dropdown-item"  href="./../register/">Register</a></li> 
+            <li id="logout" class="d-none"><a class="dropdown-item"  href="./">Log out</a></li>            
+          </ul>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main id="offlinePage" class="d-none container col-11 col-md-5 col-xl-4 mt-5">
+    <section class="card bg-black bg-opacity-25">
+      <div class="card-body border border-primary rounded-3 p-3">
+        <h3 class="card-title text-primary">Hey!</h3>
+        <p class="card-text mb-1">You have to log in to access this page!</p>
+        <p class="card-text mb-5">If you don't have an account, you can make one!</p>
+        <a href="./../../login/" class="card-link">Login</a>
+        <a href="./../../register/" class="card-link">Register</a>
+      </div>
+    </section>
+  </main>
+
+  <main id="mainContent" class="container d-block">
+        <div class="row">
+          <div id="profile-container" class="col-12 col-sm-6 col-md-4 mb-5">
+            <div class="card text-center bg-white bg-opacity-10 p-3">
+              <div src="" class="card-img bg-white bg-opacity-50 rounded-3" alt="Profile Picture" style="height: 350px;"></div>
+              <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                <h5 class="card-title bg-dark col-4 text-dark">Name</h5>
+                <h5 class="card-subtitle bg-dark col-7 text-dark">something@noroff.no</h5>
+                <div class="d-flex align-items-center gap-1 justify-content-center mt-4 bg-dark col-2">
+                  <p id="" class="mb-0 fs-5 text-dark">1000</p>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+              </div> 
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-8 mb-5">
+            <h2 class="">Recent Listings</h2>
+            <div id="profile-listings">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                
+                <div class="card m-2 bg-white bg-opacity-10">
+                  <img src="" class="rounded-3 mt-2 bg-white bg-opacity-50" style="height: 120px;">
+                  <div class="card-body px-0 py-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <h5 class="card-title mb-0 bg-dark text-dark">Post Title</h5>
+                      <div class="d-flex justify-content-end gap-2 rounded-3 pt-2">
+                        <!-- <a href=""><i class="pe-auto fa-solid fa-pen text-white"></i></a>
+                        <i id="deletePost" class="pe-auto fa-solid fa-trash text-white"></i> -->
+                      </div>
+                    </div>
+                    
+                    <div class="card-body bg-white bg-opacity-10 col-12 p-2 rounded-2">
+                      <div class="d-flex justify-content-between">
+                        <div class="">
+                          <p class="card-text">
+                            <small class="bg-dark text-dark">Top Bid</small> <br>
+                            <small class="bg-dark text-dark">Ends in</small>
+                          </p>
+                        </div>
+                        <div class="">
+                          <p class="card-text text-end">
+                            <small class="bg-dark text-dark">$129</small> <br>
+                            <small class="bg-dark text-dark">2 days</small>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+   
+              </div>
+            </div>
+          </div>
+        </div>
+    
+  </main>
+  <div class="container-fluid bg-secondback mt-auto">
+    <footer class="py-3 my-5">
+      <div class="border-bottom pb-3 mb-3"></div>
+      <p class="mt-5 text-center">© 2023 Knight</p>
+    </footer>
+  </div>
+</body>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/aceh');
+</style>
+</html>

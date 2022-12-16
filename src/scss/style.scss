@@ -1,0 +1,37 @@
+@import "./variables";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body{
+    font-family: 'Aceh', sans-serif;
+    font-weight: 500;
+    color:white;
+}
+
+.btn{
+    font-weight: 800;
+}
+
+.custom-btn-width {
+    width: 40% !important;
+}
+
+h1, h2, h3, h4, h5, p, label{
+    color: $light;
+}
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+
+//Generate utilites for Cursor
+$utilities: map-merge(
+  $utilities,
+  (
+    "cursor": (
+      property: cursor,
+      values: auto default pointer wait text move help not-allowed
+    ),
+  )
+);
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
