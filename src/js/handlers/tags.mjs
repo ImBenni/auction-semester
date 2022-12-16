@@ -47,15 +47,7 @@ export async function getTags(postData) {
             }
     
             const span = document.createElement('span');
-            span.classList.add(
-            'bg-primary',
-            'text-white',
-            'fw-bold',
-            'rounded-3',
-            'px-2',
-            "py-1",
-            "me-1",
-            );
+            span.classList.add('bg-primary','text-white','fw-bold','rounded-3','px-2', "py-1","me-1");
             span.style.fontSize = '0.8rem';
             span.innerText += tag;
     

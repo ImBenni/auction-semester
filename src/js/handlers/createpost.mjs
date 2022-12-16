@@ -23,9 +23,10 @@ export async function setCreatePost() {
     const title = document.querySelector('#titlePreview');
     const description = document.querySelector('#descriptionPreview');
     let image = document.querySelector('#mediaPreview');
+    const tags = document.querySelector(".tagContainer")
     const date = document.querySelector('#datePreview');
 
-    form.addEventListener('change', (event) => {
+    form.addEventListener('input', (event) => {
       event.preventDefault();
       if (event.target.id === 'title') {
         title.textContent = event.target.value;
@@ -37,6 +38,18 @@ export async function setCreatePost() {
         const mediaArray = event.target.value.split(",");
         image.src = mediaArray[mediaArray.length - 1];
       }
+      if (event.target.id === `tags`) {
+        tags.innerHTML = ""
+        const tagsArray = event.target.value.split(",").map((item) => item.trim()); 
+        tagsArray.forEach((tag) => {
+          const span = document.createElement('span');
+          span.classList.add('bg-primary', 'text-white', 'fw-bold', 'rounded-3', 'px-2', "py-1", "me-1");
+          span.style.fontSize = '0.8rem';
+          span.textContent = tag;
+          tags.append(span);
+        });
+      }
+      
       if (event.target.id === 'date') {
           date.textContent = formatDate(form.endsAt.value);
       }
