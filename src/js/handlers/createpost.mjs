@@ -49,7 +49,6 @@ export async function setCreatePost() {
           tags.append(span);
         });
       }
-      
       if (event.target.id === 'date') {
           date.textContent = formatDate(form.endsAt.value);
       }

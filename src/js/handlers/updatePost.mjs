@@ -8,6 +8,7 @@ export async function setUpdatePost() {
   const description = document.querySelector('#descriptionPreview');
   let image = document.querySelector('#mediaPreview');
   const date = document.querySelector('#datePreview');
+  const tags = document.querySelector(".tagContainer")
 
   const url = new URL(location.href);
   const id = url.searchParams.get("id");
@@ -19,10 +20,18 @@ export async function setUpdatePost() {
     form.tags.value = post.tags;
     form.media.value = post.media;
     form.endsAt.value = formatDate(post.endsAt);
+
     title.innerText = post.title;
     description.innerText = post.description;
     image.src = post.media;
     date.innerText = formatDate(post.endsAt);
+    post.tags.forEach((tag) => {
+      const span = document.createElement('span');
+      span.classList.add('bg-primary', 'text-white', 'fw-bold', 'rounded-3', 'px-2', "py-1", "me-1");
+      span.style.fontSize = '0.8rem';
+      span.textContent = tag;
+      tags.append(span);
+    });
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -39,7 +48,7 @@ export async function setUpdatePost() {
     });
   }
 
-  form.addEventListener('change', (event) => {
+  form.addEventListener('input', (event) => {
     event.preventDefault();
     if (event.target.id === 'title') {
       title.textContent = event.target.value;
@@ -50,6 +59,17 @@ export async function setUpdatePost() {
     if (event.target.id === 'media') {
       const mediaArray = event.target.value.split(",");
       image.src = mediaArray[mediaArray.length - 1];
+    }
+    if (event.target.id === `tags`) {
+      tags.innerHTML = ""
+      const tagsArray = event.target.value.split(",").map((item) => item.trim()); 
+      tagsArray.forEach((tag) => {
+        const span = document.createElement('span');
+        span.classList.add('bg-primary', 'text-white', 'fw-bold', 'rounded-3', 'px-2', "py-1", "me-1");
+        span.style.fontSize = '0.8rem';
+        span.textContent = tag;
+        tags.append(span);
+      });
     }
     if (event.target.id === 'date') {
         date.textContent = formatDate(form.endsAt.value);
