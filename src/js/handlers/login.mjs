@@ -6,18 +6,24 @@ import { login } from "../api/auth/login.mjs";
 
 export function setLoginHandler() {
   const form = document.getElementById('loginForm');
+  const errorMessage = document.getElementById("errorMessage")
 
   if (form) {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       const form = event.target;
-      const formData = new FormData(form);
-      const profile = Object.fromEntries(formData.entries());
-      const { email, password } = profile;
+      const data = new FormData(form);
+      const email = data.get("email")
+      const password = data.get("password")
 
-      await login(email, password);
-      window.location = "./../"
+      try {
+        const { name } = await login(email, password)
+        location.href = `./../profile/?name=${name}`
+      } catch (error) {
+        errorMessage.classList.remove("d-none")
+        errorMessage.innerHTML = `${error.message}`
+      }
     });
   }
 }

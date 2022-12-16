@@ -53,15 +53,16 @@
           <h2 class="fw-bold mb-4">Log In</h2>
           <form action="submit" id="loginForm" class="w-100 d-flex flex-column">
             <div class="form-floating mb-4">
-
               <input  class="form-control form-control-auth border-0 bg-white bg-opacity-10 text-white"  id="email" name="email" placeholder="email@noroff.no" title="The email needs to be either @noroff.no or @stud.noroff.no" required>
               <label for="email">Email</label>
             </div>
 
-            <div class="form-floating mb-5">
+            <div class="form-floating mb-3">
               <input type="password" class="form-control form-control-auth border-0 bg-white bg-opacity-10 text-white" id="password" name="password" placeholder="Your very secret password!" title="Write your password to log in." required>
               <label for="password">Password</label>
             </div>
+
+            <div id="errorMessage" class="bg-danger mb-5 text-white p-3 rounded-3 d-none">There seems to be something wrong with the login</div>
             
             <button class="btn btn-blue rounded-5" style="height: 45px;">Log in</button>
             <div class="d-flex mt-2">

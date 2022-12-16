@@ -17,8 +17,16 @@ export async function login(email, password) {
     body: JSON.stringify({ email, password }),
   });
 
-  const result = await response.json();
+  // Check the status of the login request
+  if (response.status === 200) {
+    const result = await response.json();
 
-  storage.save("token", result.accessToken);
-  storage.save("profile", result);
+    storage.save("token", result.accessToken);
+    storage.save("profile", result);
+
+    // Return the name property
+    return { name: result.name };
+  } else {
+    throw new Error("Invalid login information");
+  }
 }
