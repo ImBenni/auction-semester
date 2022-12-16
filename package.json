@@ -1,0 +1,22 @@
+{
+  "name": "semester-project-auction",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass src/scss:dist/css",
+    "start": "sass --watch src/scss:dist/css",
+    "lint": "eslint src/**/*.js"
+  },
+  "author": "Benni",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "prettier": "^2.8.0",
+    "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}
