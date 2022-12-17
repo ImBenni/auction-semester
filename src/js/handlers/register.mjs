@@ -1,20 +1,19 @@
 import { login } from "../api/auth/login.mjs";
 import { register } from "../api/auth/register.mjs";
 
-
 /**
  * A listener for when users register.
  */
 export function setRegisterHandler() {
-  const form = document.getElementById('registerForm');
+  const form = document.getElementById("registerForm");
 
   if (form) {
-    form.addEventListener('submit', async (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      document.querySelectorAll('input').forEach((input) => {
-        if (input.value === '') {
-          input.setAttribute('disabled', true);
+      document.querySelectorAll("input").forEach((input) => {
+        if (input.value === "") {
+          input.setAttribute("disabled", true);
         }
       });
 
@@ -30,6 +29,21 @@ export function setRegisterHandler() {
         window.location = "./../";
       } catch (error) {
         console.log(error);
+      }
+    });
+
+    const pfpPreview = document.getElementById("pfpPreview");
+
+    form.addEventListener("input", (event) => {
+      event.preventDefault();
+
+      console.log(event.target.id);
+      if (event.target.id === "avatar") {
+        if (event.target.value === "") {
+          pfpPreview.src = "../../../../assets/img/profile.png";
+        } else {
+          pfpPreview.src = event.target.value;
+        }
       }
     });
   }

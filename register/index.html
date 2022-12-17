@@ -71,9 +71,12 @@
               <label for="password">Password</label>
             </div>
 
-            <div class="form-floating mb-4">
+            <div class="form-floating mb-4 d-flex">
               <input type="url" class="form-control form-control-auth border-0 bg-white bg-opacity-10 text-white" id="avatar" name="avatar" placeholder="Insert url..." title="Paste a picture url in here for your avatar!" required />
               <label for="password">Profile Picture <span class="text-muted fst-italic mx-1" style="font-size: 0.8rem">Paste a picture url in here for your avatar!</span></label>
+              <div class="bg-white bg-opacity-10 p-1 rounded-3 ms-2 ratio ratio-1x1" style="width: 4.2rem">
+                <img id="pfpPreview" class="ratio ratio-1x1 rounded-3" src="/assets/img/profile.png" alt="Pfp Preview" />
+              </div>
             </div>
 
             <button class="btn btn-blue rounded-5" style="height: 45px">Sign up!</button>
