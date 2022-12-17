@@ -58,12 +58,12 @@
           <form action="submit" id="registerForm" class="w-100 d-flex flex-column">
             <div class="form-floating mb-4">
               <input type="text" class="form-control form-control-auth border-0 bg-white bg-opacity-10 text-white" id="name" name="name" placeholder="Insert username..." maxlength="20" pattern="^[\w]+$" title="Please choose a fitting username! Use lowercase and uppercase letters, numbers and underscore." required />
-              <label for="email">Username</label>
+              <label for="email">Username<span class="text-muted fst-italic mx-1" style="font-size: 0.8rem">Character Limit: 20</span></label>
             </div>
 
             <div class="form-floating mb-4">
               <input type="email" class="form-control form-control-auth border-0 bg-white bg-opacity-10 text-white" id="email" name="email" placeholder="email@noroff.no" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="The email needs to be either @noroff.no or @stud.noroff.no" required />
-              <label for="email">Email</label>
+              <label for="email">Email<span class="text-muted fst-italic mx-1" style="font-size: 0.8rem">The email needs to be either @noroff.no or @stud.noroff.no</span></label>
             </div>
 
             <div class="form-floating mb-4">
@@ -73,7 +73,7 @@
 
             <div class="form-floating mb-4">
               <input type="url" class="form-control form-control-auth border-0 bg-white bg-opacity-10 text-white" id="avatar" name="avatar" placeholder="Insert url..." title="Paste a picture url in here for your avatar!" required />
-              <label for="password">Profile Picture</label>
+              <label for="password">Profile Picture <span class="text-muted fst-italic mx-1" style="font-size: 0.8rem">Paste a picture url in here for your avatar!</span></label>
             </div>
 
             <button class="btn btn-blue rounded-5" style="height: 45px">Sign up!</button>
